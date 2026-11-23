@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisa de Qualidade de Vida e Bem-Estar</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f0ebf8;
+      color: #202124;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      border: 1px solid #dadce0;
+    }
+    .header-card {
+      border-top: 10px solid #673ab7;
+    }
+    h1 {
+      font-size: 28px;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    h2 {
+      font-size: 18px;
+      color: #673ab7;
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    p.desc {
+      font-size: 14px;
+      color: #5f6368;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+    .question-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .required {
+      color: #d93025;
+      margin-left: 4px;
+    }
+    .option-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    label.option {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 10px;
+      accent-color: #673ab7;
+      width: 16px;
+      height: 16px;
+    }
+    .scale-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding: 10px 0;
+    }
+    .scale-label {
+      font-size: 12px;
+      color: #5f6368;
+      max-width: 90px;
+      text-align: center;
+    }
+    .scale-options {
+      display: flex;
+      gap: 20px;
+    }
+    .scale-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      gap: 6px;
+    }
+    .scale-item input[type="radio"] {
+      margin: 0;
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      padding: 12px;
+      font-family: inherit;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 90px;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #673ab7;
+      border-width: 2px;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    button[type="submit"] {
+      background-color: #673ab7;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button[type="submit"]:hover {
+      background-color: #5e35b1;
+    }
+    button[type="reset"] {
+      background: none;
+      border: none;
+      color: #673ab7;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <form action="#" method="POST">
+      
+      <!-- Cabeçalho -->
+      <div class="card header-card">
+        <h1>Pesquisa de Qualidade de Vida e Bem-Estar</h1>
+        <p class="desc">Este questionário tem como objetivo avaliar diferentes aspectos da sua saúde física, mental e rotina diária. Suas respostas são confidenciais.</p>
+      </div>
+
+      <!-- Seção 1 -->
+      <div class="card">
+        <h2>1. Perfil Demográfico</h2>
+        
+        <span class="question-title">Qual é a sua faixa etária?<span class="required">*</span></span>
+        <div class="option-group">
+          <label class="option"><input type="radio" name="faixa_etaria" value="menos_18" required> Menos de 18 anos</label>
+          <label class="option"><input type="radio" name="faixa_etaria" value="18_29"> 18 a 29 anos</label>
+          <label class="option"><input type="radio" name="faixa_etaria" value="30_44"> 30 a 44 anos</label>
+          <label class="option"><input type="radio" name="faixa_etaria" value="45_59"> 45 a 59 anos</label>
+          <label class="option"><input type="radio" name="faixa_etaria" value="60_mais"> 60 anos ou mais</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="question-title">Qual é a sua ocupação principal atualmente?<span class="required">*</span></span>
+        <div class="option-group">
+          <label class="option"><input type="radio" name="ocupacao" value="estudante" required> Estudante</label>
+          <label class="option"><input type="radio" name="ocupacao" value="presencial"> Trabalhador(a) presencial</label>
+          <label class="option"><input type="radio" name="ocupacao" value="remoto"> Trabalhador(a) remoto / híbrido</label>
+          <label class="option"><input type="radio" name="ocupacao" value="autonomo"> Autônomo(a) / Empreendedor(a)</label>
+          <label class="option"><input type="radio" name="ocupacao" value="aposentado"> Aposentado(a)</label>
+          <label class="option"><input type="radio" name="ocupacao" value="desempregado"> Desempregado(a)</label>
+        </div>
+      </div>
+
+      <!-- Seção 2 -->
+      <div class="card">
+        <h2>2. Saúde Física e Hábitos</h2>
+        
+        <span class="question-title">Como você avalia a qualidade do seu sono na maioria das noites?<span class="required">*</span></span>
+        <div class="scale-container">
+          <span class="scale-label">Muito ruim</span>
+          <div class="scale-options">
+            <label class="scale-item">1 <input type="radio" name="sono" value="1" required></label>
+            <label class="scale-item">2 <input type="radio" name="sono" value="2"></label>
+            <label class="scale-item">3 <input type="radio" name="sono" value="3"></label>
+            <label class="scale-item">4 <input type="radio" name="sono" value="4"></label>
+            <label class="scale-item">5 <input type="radio" name="sono" value="5"></label>
+          </div>
+          <span class="scale-label">Excelente</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="question-title">Com que frequência você pratica atividades físicas?<span class="required">*</span></span>
+        <div class="option-group">
+          <label class="option"><input type="radio" name="atividade_fisica" value="nao_pratico" required> Não pratico</label>
+          <label class="option"><input type="radio" name="atividade_fisica" value="1_2_vezes"> 1 a 2 vezes por semana</label>
+          <label class="option"><input type="radio" name="atividade_fisica" value="3_4_vezes"> 3 a 4 vezes por semana</label>
+          <label class="option"><input type="radio" name="atividade_fisica" value="5_mais"> 5 ou mais vezes por semana</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="question-title">Como você classifica seus hábitos alimentares no dia a dia?<span class="required">*</span></span>
+        <div class="scale-container">
+          <span class="scale-label">Pouco saudáveis</span>
+          <div class="scale-options">
+            <label class="scale-item">1 <input type="radio" name="alimentacao" value="1" required></label>
+            <label class="scale-item">2 <input type="radio" name="alimentacao" value="2"></label>
+            <label class="scale-item">3 <input type="radio" name="alimentacao" value="3"></label>
+            <label class="scale-item">4 <input type="radio" name="alimentacao" value="4"></label>
+            <label class="scale-item">5 <input type="radio" name="alimentacao" value="5"></label>
+          </div>
+          <span class="scale-label">Muito saudáveis</span>
+        </div>
+      </div>
+
+      <!-- Seção 3 -->
+      <div class="card">
+        <h2>3. Saúde Mental e Emocional</h2>
+
+        <span class="question-title">Com que frequência você se sente estressado(a) ou sobrecarregado(a)?<span class="required">*</span></span>
+        <div class="scale-container">
+          <span class="scale-label">Raramente / Nunca</span>
+          <div class="scale-options">
+            <label class="scale-item">1 <input type="radio" name="estresse" value="1" required></label>
+            <label class="scale-item">2 <input type="radio" name="estresse" value="2"></label>
+            <label class="scale-item">3 <input type="radio" name="estresse" value="3"></label>
+            <label class="scale-item">4 <input type="radio" name="estresse" value="4"></label>
+            <label class="scale-item">5 <input type="radio" name="estresse" value="5"></label>
+          </div>
+          <span class="scale-label">Constantemente</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="question-title">Quais atividades você costuma fazer para relaxar ou cuidar da mente? (Marque quantas quiser)</span>
+        <div class="option-group">
+          <label class="option"><input type="checkbox" name="relaxar[]" value="hobbies"> Hobbies (leitura, música, jogos, arte)</label>
+          <label class="option"><input type="checkbox" name="relaxar[]" value="familia_amigos"> Convívio com família e amigos</label>
+          <label class="option"><input type="checkbox" name="relaxar[]" value="terapia"> Terapia ou acompanhamento psicológico</label>
+          <label class="option"><input type="checkbox" name="relaxar[]" value="meditacao"> Meditação ou práticas de respiração</label>
+          <label class="option"><input type="checkbox" name="relaxar[]" value="natureza"> Contato com a natureza</label>
+          <label class="option"><input type="checkbox" name="relaxar[]" value="sem_tempo"> Não tenho tido tempo para relaxar</label>
+        </div>
+      </div>
+
+      <!-- Seção 4 -->
+      <div class="card">
